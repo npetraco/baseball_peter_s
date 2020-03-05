@@ -1,0 +1,43 @@
+---
+title: "HoustonHitData"
+author: "Peter Shenkin"
+date: "3/1/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+library(tidyverse)
+## R Markdown
+
+This data is the list of at bats resulting in hits for the Houston Team at home in 2017
+
+```{r }
+hits <- read.csv("/home/npetraco/latex/papers/baseball_peter_s/HOU.home.season.hits2.csv")
+hits
+```
+
+Now let use add some fields
+I had to change pitches to a character field to count length
+I added a field l.pitches for the lenth of the pitching field entry.
+Using Tidyverse commands to try to learn them 
+
+```{r mutate fields}
+hitsm <- hits %>% mutate (pitches = as.character(pitches), l.pitches = nchar(pitches))
+head(hitsm)
+```
+Now simple summary of counts
+
+# Summary of counts of hits
+```{r}
+
+hitsm %>% group_by(hit.cod) %>% summarise(n=n())
+```
+Summary of average length of pitch sequnce by pitch type
+```{r}
+hitsm %>% group_by(hit.cod) %>% summarise(mean(l.pitches))
+
+```
+
+
