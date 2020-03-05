@@ -1,6 +1,7 @@
 library(tidyverse)
 
-hits <- read.csv("/home/npetraco/latex/papers/baseball_peter_s/HOU.home.season.hits2.csv")
+#hits <- read.csv("/home/npetraco/latex/papers/baseball_peter_s/HOU.home.season.hits2.csv")
+hits <- read.csv("C:/Users/aliso/latex/baseball_peter/HOU.home.season.hits2.csv")
 hits
 
 # Now let use add some fields
@@ -28,7 +29,9 @@ select(hitsm, -retroID)
 
 # Peter:
 # Try this. The mean  length of the HR sequences averages are longer than S, D, T.  
-# Does this hold with more data? Is it significant? I don’t see any reason why this would be true. 
+# Does this hold with more data? Is it significant? I don't see any reason why this would be true. 
 # But you could probably run it through all at bats for all teams. 
 
 # In a given game, HR seq lengs vs S, D, T seq lengs??
+# Average over games?
+# Just go down the whole season?
