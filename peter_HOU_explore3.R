@@ -35,3 +35,10 @@ select(hitsm, -retroID)
 # In a given game, HR seq lengs vs S, D, T seq lengs??
 # Average over games?
 # Just go down the whole season?
+
+# Look at Peter's sequence lengths above!!!!!!! 
+# Peter's Hypothesis: Cheating didn't help them.
+
+# Is there a difference between between these means:
+# Summary of counts of hits
+ hitsm %>% group_by(hit.cod) %>% summarise(n=n())
